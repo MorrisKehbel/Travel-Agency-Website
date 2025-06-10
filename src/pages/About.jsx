@@ -25,7 +25,7 @@ export const About = () => {
         </div>
         <div>
           <img
-            className="rounded-xl"
+            className="rounded-xl w-full h-84 object-cover"
             src="https://images.pexels.com/photos/3935702/pexels-photo-3935702.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
             alt="person looking at a map"
           />
@@ -34,7 +34,7 @@ export const About = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 my-12 p-4">
         <div>
           <img
-            className="rounded-xl"
+            className="rounded-xl w-full h-84 object-cover"
             src="https://images.pexels.com/photos/335393/pexels-photo-335393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
             alt="Close up of a globe"
           />

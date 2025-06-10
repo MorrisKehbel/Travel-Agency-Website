@@ -47,6 +47,24 @@ export const Contact = () => {
           Send
         </button>
       </form>
+      <div className="mt-16">
+        <h3 className="text-2xl font-bold text-gray-600 text-center my-4">
+          More Information
+        </h3>
+        <div>
+          <ul>
+            <li className="text-gray-600 my-2">
+              <strong>Phone:</strong> +49 1234 56789
+            </li>
+            <li className="text-gray-600 my-2">
+              <strong>E-Mail:</strong> you@example.com
+            </li>
+            <li className="text-gray-600 my-2">
+              <strong>Address:</strong> Example Street 23, City
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };

@@ -13,23 +13,32 @@ export const Home = () => {
         memories, all at student-friendly prices. Let your next adventure start
         here.
       </p>
-      <form className="max-w-3xl flex mt-6 border-1 rounded-lg border-black bg-gray-400 mx-auto">
+      <form className="max-w-4xl w-full mx-auto bg-gray-100 shadow-md rounded-xl p-6 grid grid-cols-1 md:grid-cols-5 gap-4">
         <input
           type="text"
-          placeholder="Origin"
           name="origin"
-          className="input bg-gray-400"
+          placeholder="Origin"
+          className="input w-full bg-gray-400 placeholder:text-gray-100"
         />
         <input
           type="text"
-          placeholder="Destination"
           name="destination"
-          className="input bg-gray-400"
+          placeholder="Destination"
+          className="input w-full bg-gray-400 placeholder:text-gray-100"
         />
-        <input type="date" name="startDate" className="input bg-gray-400" />
-        <input type="date" name="returnDate" className="input bg-gray-400" />
+        <input
+          type="date"
+          name="startDate"
+          className="input w-full bg-gray-400"
+        />
+        <input
+          type="date"
+          name="returnDate"
+          className="input w-full  bg-gray-400"
+        />
+
         <Link to="/destinations">
-          <button className="btn btn-primary">search</button>
+          <button className="btn btn-primary w-full">Search</button>
         </Link>
       </form>
     </div>
