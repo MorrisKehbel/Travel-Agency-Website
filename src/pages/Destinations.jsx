@@ -81,7 +81,7 @@ export const Destinations = () => {
         engineering students.
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-        {locationData.map((card) => (
+        {locationData.map((card, i, locationData) => (
           <div
             key={card.slug}
             className="bg-primary rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-all"
@@ -95,7 +95,7 @@ export const Destinations = () => {
               <Link
                 to={`/destinations/${card.slug}`}
                 key={card.slug}
-                state={{ card }}
+                state={{ locationData }}
                 className="text-white hover:text-gray-200 font-medium"
               >
                 {card.location}

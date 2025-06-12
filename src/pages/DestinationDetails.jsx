@@ -1,8 +1,11 @@
-import { Link, useLocation } from "react-router";
+import { useParams, Link, useLocation } from "react-router";
 
 export const DestinationDetails = () => {
+  const { slug } = useParams();
   const location = useLocation();
-  const { card } = location.state || {};
+  const locationData = location.state?.locationData;
+
+  const card = locationData.find((data) => data.slug === slug);
 
   if (!card) {
     throw new Error("Destinations Details could not be loaded.");
