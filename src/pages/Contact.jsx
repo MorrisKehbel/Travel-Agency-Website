@@ -48,10 +48,10 @@ export const Contact = () => {
         </button>
       </form>
       <div className="mt-16">
-        <h3 className="text-2xl font-bold text-gray-600 text-center my-4">
+        <h3 className="text-4xl font-bold text-gray-600 text-center my-4">
           More Information
         </h3>
-        <div>
+        <div className="flex flex-col border-2 border-gray-200 shadow-xl bg-gray-100 rounded-2xl p-4 mt-6">
           <ul>
             <li className="text-gray-600 my-2">
               <strong>Phone:</strong> +49 1234 56789
