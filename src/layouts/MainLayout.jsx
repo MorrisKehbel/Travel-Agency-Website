@@ -1,8 +1,7 @@
-import { Navbar } from "../components/shared/Navbar";
 import { Outlet, useLocation } from "react-router";
-import { Footer } from "../components/shared/Footer";
 import { ErrorBoundary } from "react-error-boundary";
-import { Error } from "../components/Error";
+
+import { Navbar, Footer, Error } from "../components/shared/index";
 
 export const MainLayout = () => {
   const location = useLocation();
