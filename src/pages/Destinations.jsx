@@ -67,6 +67,10 @@ const locationData = [
 ];
 
 export const Destinations = () => {
+  if (!locationData?.length) {
+    throw new Error("Destinations could not be loaded.");
+  }
+
   return (
     <div className="max-w-7xl mx-auto py-8 px-4">
       <h2 className="text-4xl font-bold text-gray-600 text-center my-4">

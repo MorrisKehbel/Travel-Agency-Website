@@ -4,7 +4,9 @@ export const DestinationDetails = () => {
   const location = useLocation();
   const { card } = location.state || {};
 
-  console.log(card);
+  if (!card) {
+    throw new Error("Destinations Details could not be loaded.");
+  }
 
   return (
     <div className="max-w-7xl mx-auto py-8 px-4">
