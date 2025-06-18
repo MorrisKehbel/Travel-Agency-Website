@@ -34,7 +34,9 @@ export const Destinations = () => {
           <div
             key={card.slug}
             className={`bg-primary rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-all ${
-              i === 0 ? "col-span-3 mb-8" : "col-span-1"
+              i === 0
+                ? "col-span-1 sm:col-span-2 lg:col-span-3 md:mb-4 lg:mb-8"
+                : "col-span-1"
             }`}
           >
             <img
