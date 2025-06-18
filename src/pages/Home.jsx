@@ -1,6 +1,13 @@
 import { Link } from "react-router";
+import { useState } from "react";
 
 export const Home = () => {
+  const [inputValue, setInputValue] = useState("");
+
+  const handleChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
   return (
     <div className="max-w-7xl mx-auto py-8 px-4">
       <h2 className="text-4xl font-bold text-gray-600 text-center my-4">
@@ -23,6 +30,8 @@ export const Home = () => {
         <input
           type="text"
           name="destination"
+          value={inputValue}
+          onChange={handleChange}
           placeholder="Destination"
           className="input w-full bg-gray-400 placeholder:text-gray-100"
         />
@@ -37,7 +46,7 @@ export const Home = () => {
           className="input w-full  bg-gray-400"
         />
 
-        <Link to="/destinations">
+        <Link to="/destinations" state={{ inputValue }}>
           <button className="btn btn-primary w-full">Search</button>
         </Link>
       </form>

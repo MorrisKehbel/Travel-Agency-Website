@@ -12,7 +12,7 @@ export const Contact = () => {
         Have questions, ideas, or want to join a trip? Send us a message and
         we’ll get back to you soon!
       </p>
-      <form className="flex flex-col border-2 border-gray-200 shadow-xl bg-gray-100 rounded-2xl p-4 mt-6">
+      <form className="flex flex-col border-2 border-gray-200 shadow-md bg-gray-100 rounded-2xl p-4 mt-6">
         <label className="text-gray-600  text-lg font-semibold my-2">
           Name
         </label>
@@ -51,7 +51,7 @@ export const Contact = () => {
         <h3 className="text-4xl font-bold text-gray-600 text-center my-4">
           More Information
         </h3>
-        <div className="flex flex-col border-2 border-gray-200 shadow-xl bg-gray-100 rounded-2xl p-4 mt-6">
+        <div className="flex flex-col border-2 border-gray-200 shadow-md bg-gray-100 rounded-2xl p-4 mt-6">
           <ul>
             <li className="text-gray-600 my-2">
               <strong>Phone:</strong> +49 1234 56789
