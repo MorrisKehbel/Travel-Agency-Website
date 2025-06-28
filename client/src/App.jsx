@@ -13,6 +13,8 @@ import {
   DestinationDetails,
 } from "./pages/index";
 import { MainLayout } from "./layouts/MainLayout";
+import { Loading, Error } from "./components/shared/index";
+import { loadLocations, loadLocationBySlug } from "./data";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -21,8 +23,20 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/destinations" element={<Destinations />} />
-        <Route path="/destinations/:slug" element={<DestinationDetails />} />
+        <Route
+          path="/destinations"
+          loader={loadLocations}
+          hydrateFallbackElement={<Loading />}
+          errorElement={<Error />}
+          element={<Destinations />}
+        />
+        <Route
+          path="/destinations/:slug"
+          loader={loadLocationBySlug}
+          hydrateFallbackElement={<Loading />}
+          errorElement={<Error />}
+          element={<DestinationDetails />}
+        />
       </Route>
     )
   );
