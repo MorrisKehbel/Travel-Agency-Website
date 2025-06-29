@@ -1,11 +1,15 @@
-import { Link } from "react-router";
+import { useNavigate } from "react-router";
 import { useState } from "react";
-
 export const Home = () => {
   const [inputValue, setInputValue] = useState("");
-
+  const navigate = useNavigate();
   const handleChange = (event) => {
     setInputValue(event.target.value);
+  };
+
+  const handleOnSubmit = (event) => {
+    setInputValue(event.target.value);
+    navigate(`destinations/search?q=${encodeURIComponent(inputValue)}`);
   };
 
   return (
@@ -20,7 +24,10 @@ export const Home = () => {
         memories, all at student-friendly prices. Let your next adventure start
         here.
       </p>
-      <form className="max-w-4xl w-full mx-auto bg-gray-100 shadow-md rounded-xl p-6 grid grid-cols-1 md:grid-cols-5 gap-4">
+      <form
+        onSubmit={handleOnSubmit}
+        className="max-w-4xl w-full mx-auto bg-gray-100 shadow-md rounded-xl p-6 grid grid-cols-1 md:grid-cols-5 gap-4"
+      >
         <input
           type="text"
           name="origin"
@@ -46,9 +53,7 @@ export const Home = () => {
           className="input w-full  bg-gray-400"
         />
 
-        <Link to="/destinations" state={{ inputValue }}>
-          <button className="btn btn-primary w-full">Search</button>
-        </Link>
+        <button className="btn btn-primary w-full">Search</button>
       </form>
     </div>
   );

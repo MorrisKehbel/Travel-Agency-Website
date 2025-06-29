@@ -31,6 +31,13 @@ const App = () => {
           element={<Destinations />}
         />
         <Route
+          path="/destinations/search"
+          loader={loadLocations}
+          hydrateFallbackElement={<Loading />}
+          errorElement={<Error />}
+          element={<Destinations />}
+        />
+        <Route
           path="/destinations/:slug"
           loader={loadLocationBySlug}
           hydrateFallbackElement={<Loading />}

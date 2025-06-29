@@ -1,8 +1,11 @@
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { use } from "react";
 
 export const DestinationCard = ({ promise }) => {
   const location = use(promise);
+  const url = useLocation();
+  const from =
+    `/destinations/search${url.state?.searchQuery}` || "/destinations";
 
   return (
     <div className="max-w-7xl mx-auto py-8 px-4">
@@ -19,7 +22,7 @@ export const DestinationCard = ({ promise }) => {
         <p className="text-gray-600 font-semibold text-lg my-4">
           {location.description}
         </p>
-        <Link to="/destinations" className="btn btn-primary">
+        <Link to={from} className="btn btn-primary">
           Return
         </Link>
       </div>

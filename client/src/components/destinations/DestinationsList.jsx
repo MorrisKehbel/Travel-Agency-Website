@@ -3,18 +3,31 @@ import { use } from "react";
 
 export const DestinationsList = ({ promise }) => {
   const location = useLocation();
-  const inputLocation = location.state?.inputValue;
-
+  const searchParams = new URLSearchParams(location.search);
+  const inputLocation = searchParams.get("destination");
   const locations = use(promise);
 
-  const showLocations = [
-    ...locations.filter((item) =>
-      item.name?.toLowerCase().includes(inputLocation?.toLowerCase())
-    ),
-    ...locations.filter(
-      (item) => !item.name?.toLowerCase().includes(inputLocation?.toLowerCase())
-    ),
-  ];
+  const searchQuery = location.search;
+
+  const filterLocation = locations.filter((item) =>
+    item.name?.toLowerCase().includes(inputLocation?.toLowerCase())
+  );
+
+  const filterDescLocation = locations.filter((item) =>
+    item.description?.toLowerCase().includes(inputLocation?.toLowerCase())
+  );
+
+  let showLocations = locations;
+
+  if (filterLocation.length > 0) {
+    const rest = locations.filter((item) => !filterLocation.includes(item));
+    showLocations = [...filterLocation, ...rest];
+  } else if (filterLocation.length === 0 && filterDescLocation.length > 0) {
+    const rest = locations.filter((item) => !filterDescLocation.includes(item));
+    showLocations = [...filterDescLocation, ...rest];
+  } else {
+    showLocations = locations;
+  }
 
   return (
     <div className="max-w-7xl mx-auto py-8 px-4">
@@ -44,6 +57,7 @@ export const DestinationsList = ({ promise }) => {
               <Link
                 to={`/destinations/${card.slug}`}
                 key={card.id}
+                state={{ searchQuery }}
                 className="text-white hover:text-gray-200 font-medium"
               >
                 {card.name}
