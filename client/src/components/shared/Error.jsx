@@ -5,7 +5,6 @@ export const Error = ({ error }) => {
         <strong>An error has occurred:</strong>
       </h1>
       <p>{error?.message}</p>
-      <p>Please try again later.</p>
     </div>
   );
 };

@@ -22,13 +22,13 @@ export const getLocationBySlug = async (slug, abortSignal) => {
     });
 
     if (!res.ok) {
-      throw new Error("Failed to fetch locations");
+      throw new Error("Failed to fetch location");
     }
-    const locations = await res.json();
-    return locations;
+    const location = await res.json();
+    return location;
   } catch (error) {
     console.error("Error fetching location:", error);
-    throw new Error(`Error fetching locations: ${error.message}`);
+    throw new Error(`Error fetching location: ${error.message}`);
   }
 };
 
